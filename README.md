@@ -1,6 +1,6 @@
 AndroidLibrary
 ==============
-微博：<a title="Android技术及移动互联网分享" href="http://weibo.com/1901077453"  />
+微博：<a title="Android技术及移动互联网分享" href="http://weibo.com/1901077453" target="_blank">Trinea
 邮箱：<a title="欢迎邮件与我交流" href="lgpszu@gmail.com" target="_blank">lgpszu@gmail.com</a>
 SwipeToDismissListView 
 -----------------------
