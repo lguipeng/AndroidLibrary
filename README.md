@@ -10,5 +10,5 @@ PullToRefreshListView
 ###   PullToRefreshListView 下拉刷新的列表，支持底部加载，默认是点击加载更多，也可以再布局文件添加属性ptrMode:"auto"设置为自动加载，或者在代码里面setMode()也可以。
 
 ###   效果图
-![ImageCahe](http://photo.163.com/lgpszu/#m=2&aid=270093481&pid=8943154744)
+[ImageCahe](http://photo.163.com/lgpszu/#m=2&aid=270093481&pid=8943154744)
 
