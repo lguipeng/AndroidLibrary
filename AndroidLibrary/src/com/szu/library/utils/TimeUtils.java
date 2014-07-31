@@ -22,7 +22,7 @@ public class TimeUtils {
   }
   
   /**
-   * Ĭ�ϵ�ʱ���ʽ
+   * 
    * @return DEFAULT_FORMAT.format()
    */
   public static String getTime()
