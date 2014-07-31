@@ -42,7 +42,7 @@ public class FunctionActivity extends Activity{
         }
         mItemData.setList(list);
     }
-    
+
     private void function(int position)
     {
         switch (position)
