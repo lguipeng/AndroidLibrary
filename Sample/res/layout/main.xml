@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res/com.szu.AppTest"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        >
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send Notification"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal"/>
+    <com.szu.library.pulltorefresh.PullToRefreshListView
+            android:id="@+id/list_view"
+            android:dividerHeight="2dp"
+            android:divider="@color/grey"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbarThumbVertical="@color/blue"
+            android:scrollbarSize="3dp"
+            app:ptrMode="auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+    </com.szu.library.pulltorefresh.PullToRefreshListView>
+</LinearLayout>
+

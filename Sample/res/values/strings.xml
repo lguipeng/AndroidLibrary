@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AppTest</string>
+    <string name="delete_activity">Delete Activity</string>
+    <string name="delete">删除</string>
+</resources>

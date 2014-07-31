@@ -3,14 +3,11 @@
   <component name="FacetManager">
     <facet type="android" name="Android">
       <configuration>
-        <option name="LIBRARY_PROJECT" value="true" />
         <option name="UPDATE_PROPERTY_FILES" value="true" />
       </configuration>
     </facet>
     <facet type="android" name="Android2">
-      <configuration>
-        <option name="LIBRARY_PROJECT" value="true" />
-      </configuration>
+      <configuration />
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
@@ -21,6 +18,16 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../AppTest/libs/android-support-v4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="AndroidLibrary" exported="" />
   </component>
 </module>
 
