@@ -8,5 +8,7 @@ SwipeToDismissListView
 PullToRefreshListView
 -----------------------
  PullToRefreshListView 下拉刷新的列表，支持底部加载，默认是点击加载更多，也可以再布局文件添加属性ptrMode:"auto"设置为自动加载，或者在代码里面setMode()也可以。
+-----------------------
+ Sample 是对AndroidLibrary的使用样例
 
 
