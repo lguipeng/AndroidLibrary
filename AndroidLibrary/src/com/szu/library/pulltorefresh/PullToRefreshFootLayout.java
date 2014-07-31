@@ -31,6 +31,7 @@ public class PullToRefreshFootLayout extends LinearLayout {
         super(context, attrs);
         init(attrs);
     }
+    
     private void init(AttributeSet attrs)
     {
         mFootLayout = LayoutInflater.from(getContext()).inflate(R.layout.pull_to_refresh_footer,null);
@@ -51,6 +52,7 @@ public class PullToRefreshFootLayout extends LinearLayout {
         mLoadingImage.clearAnimation();
         mLoadingImage.startAnimation(mLoadingAnimation);
     }
+    
     public void onRefreshDone(PullToRefreshListView.Mode mode)
     {
         if(mode != PullToRefreshListView.Mode.AUTO_REFRESH_IN_END)
@@ -70,6 +72,7 @@ public class PullToRefreshFootLayout extends LinearLayout {
             mGetMoreButton.setVisibility(VISIBLE);
         }
     }
+    
     public void setClickToRefreshListener(OnClickListener listener)
     {
         mGetMoreButton.setOnClickListener(listener);
