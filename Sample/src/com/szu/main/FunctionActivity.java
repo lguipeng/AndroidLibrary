@@ -51,10 +51,11 @@ public class FunctionActivity extends Activity{
                 mStdFragment = StdFragment.newInstance(mItemData);
                 fragmentManager.beginTransaction().add(R.id.function,mStdFragment).commit();
                 break;
-
             case 1 :
                 mPtrFragment = PtrFragment.newInstance(mItemData);
                 fragmentManager.beginTransaction().add(R.id.function,mPtrFragment).commit();
+                break;
+            default:
                 break;
         }
     }
