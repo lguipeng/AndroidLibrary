@@ -15,4 +15,8 @@ Sample
 效果图 
 -----------------------
 ![image1](http://img2.ph.126.net/b6ugBRfr15o-NbU3vxbjFw==/4939604366395716947.png)
+![image2](http://img2.ph.126.net/PYNBrvGvAghhATvVzfP5cg==/6608627832887595536.png)
+![image3](http://img1.ph.126.net/NvRGlH46_Sugvku4ztvrrQ==/6619327180537122598.png)
+![image4](http://img2.ph.126.net/es47Ehm8i5r9BiVBIau5yA==/6619581167723139245.png)
+
 
