@@ -29,6 +29,7 @@ public class FunctionActivity extends Activity{
         init();
         function(position);
     }
+
     private void init()
     {
         position = getIntent().getExtras().getInt("position");
@@ -41,6 +42,7 @@ public class FunctionActivity extends Activity{
         }
         mItemData.setList(list);
     }
+    
     private void function(int position)
     {
         switch (position)

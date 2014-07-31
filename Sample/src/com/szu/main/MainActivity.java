@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
         addMainFragment();
 
     }
+
     private void addMainFragment()
     {
         initItemData();
@@ -39,6 +40,7 @@ public class MainActivity extends Activity {
         }
         fragmentManager.beginTransaction().add(R.id.main,mainMenuFragment,"main").commit();
     }
+
     private void initItemData()
     {
         mListItemData = new ListItemData();
@@ -47,4 +49,5 @@ public class MainActivity extends Activity {
         list.add("PullToRefreshListView");
         mListItemData.setList(list);
     }
+
 }
