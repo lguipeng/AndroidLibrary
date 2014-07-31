@@ -11,5 +11,8 @@ PullToRefreshListView
 Sample 
 -----------------------
  Sample 是对AndroidLibrary的使用样例
-
+ 
+效果图 
+-----------------------
+![image1](http://img2.ph.126.net/b6ugBRfr15o-NbU3vxbjFw==/4939604366395716947.png)
 
