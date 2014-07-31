@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SwipeToDismissListView" >
+        <attr name="dismissHeight" format="reference|integer"/>
+        <attr name="dismissWith" format="reference|integer"/>
+    </declare-styleable>
+    <declare-styleable name="PullToRefreshListView">
+        <attr name="ptrMode">
+            <flag name="normal" value="0x00"/>
+            <flag name="auto" value="0x01"/>
+        </attr>
+    </declare-styleable>
+</resources>

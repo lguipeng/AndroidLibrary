@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="@dimen/header_footer_left_right_padding"
+              android:paddingRight="@dimen/header_footer_left_right_padding" >
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/click_to_refresh"
+            android:id="@+id/click_to_refresh"
+            android:background="@null"
+            android:textColor="@color/pull_to_refresh_title_text_color"
+            android:textSize="@dimen/pull_to_refresh_title_text_size"
+            android:visibility="visible"
+            android:layout_gravity="center_horizontal"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            >
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pull_to_refresh_loading"
+                android:src="@drawable/loading"
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal"/>
+        <TextView
+                android:layout_toRightOf="@id/pull_to_refresh_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/click_to_refresh_get_more"
+                android:textSize="@dimen/pull_to_refresh_title_text_size"
+                android:textColor="@color/pull_to_refresh_title_text_color"
+                android:visibility="gone"
+                android:id="@+id/pull_to_refresh_text" android:layout_gravity="right"/>
+    </RelativeLayout>
+
+</LinearLayout>
