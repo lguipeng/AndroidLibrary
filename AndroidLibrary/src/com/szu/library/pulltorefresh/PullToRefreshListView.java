@@ -117,16 +117,15 @@ public class PullToRefreshListView extends ListViewBase {
 
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        if(true)
+
+        switch (ev.getAction())
         {
-            switch (ev.getAction())
-            {
-                case MotionEvent.ACTION_DOWN: onDown(ev);break;
-                case MotionEvent.ACTION_MOVE: onMove(ev);break;
-                case MotionEvent.ACTION_UP: onUp(ev);break;
-                default:break;
-            }
+            case MotionEvent.ACTION_DOWN: onDown(ev);break;
+            case MotionEvent.ACTION_MOVE: onMove(ev);break;
+            case MotionEvent.ACTION_UP: onUp(ev);break;
+            default:break;
         }
+        
         return super.onTouchEvent(ev);
     }
 
