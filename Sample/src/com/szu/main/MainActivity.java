@@ -46,6 +46,7 @@ public class MainActivity extends Activity {
         List<String> list = new ArrayList<String>();
         list.add("SwipeToDismissListView");
         list.add("PullToRefreshListView");
+        list.add("Volley");
         mListItemData.setList(list);
     }
 

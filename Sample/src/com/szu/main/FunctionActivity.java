@@ -1,9 +1,11 @@
 package com.szu.main;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import com.szu.AppTest.R;
+import com.szu.main.fragments.VolleyFragment;
 import com.szu.main.object.ListItemData;
 import com.szu.main.fragments.PtrFragment;
 import com.szu.main.fragments.StdFragment;
@@ -17,8 +19,7 @@ import java.util.List;
 public class FunctionActivity extends Activity{
     private final String TAG = "FunctionActivity";
     private FragmentManager fragmentManager;
-    private StdFragment mStdFragment;
-    private PtrFragment mPtrFragment;
+    private Fragment mFragment;
     private ListItemData mItemData;
 
     private int position = 0;
@@ -26,14 +27,14 @@ public class FunctionActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.function_activity);
-        init();
+        position = getIntent().getExtras().getInt("position");
+        fragmentManager = getFragmentManager();
         function(position);
     }
 
     private void init()
     {
-        position = getIntent().getExtras().getInt("position");
-        fragmentManager = getFragmentManager();
+
         mItemData = new ListItemData();
         List<String> list = new ArrayList<String>();
         for(int i=0 ;i<20 ;i++)
@@ -48,15 +49,20 @@ public class FunctionActivity extends Activity{
         switch (position)
         {
             case 0 :
-                mStdFragment = StdFragment.newInstance(mItemData);
-                fragmentManager.beginTransaction().add(R.id.function,mStdFragment).commit();
+                init();
+                mFragment = StdFragment.newInstance(mItemData);
                 break;
             case 1 :
-                mPtrFragment = PtrFragment.newInstance(mItemData);
-                fragmentManager.beginTransaction().add(R.id.function,mPtrFragment).commit();
+                init();
+                mFragment = PtrFragment.newInstance(mItemData);
+                fragmentManager.beginTransaction().add(R.id.function,mFragment).commit();
+                break;
+            case 2:
+                mFragment = VolleyFragment.newInstance();
                 break;
             default:
                 break;
         }
+        fragmentManager.beginTransaction().add(R.id.function,mFragment).commit();
     }
 }
