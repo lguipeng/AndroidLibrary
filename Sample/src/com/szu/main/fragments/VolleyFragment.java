@@ -7,16 +7,21 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.android.volley.*;
 import com.android.volley.toolbox.*;
 import com.szu.AppTest.R;
+import com.szu.main.cache.BitmapCache;
 
 /**
  * Created by lgp on 2014/8/3.
  */
 public class VolleyFragment extends Fragment{
     private TextView mTextView;
+    private ImageView mImageView;
     private final String VOLLEY_TAG = "VOLLEY_STRING_TAG";
     private RequestQueue mRequestQueue;
     public static VolleyFragment  newInstance()
@@ -32,7 +37,7 @@ public class VolleyFragment extends Fragment{
     @Override
     public void onStart() {
         super.onStart();
-        volleyTest();
+        volleyStringTest();
     }
 
     @Override
@@ -40,7 +45,7 @@ public class VolleyFragment extends Fragment{
         super.onStop();
         if(mRequestQueue != null)
         {
-            mRequestQueue.cancelAll(VOLLEY_TAG);
+            mRequestQueue.stop();
         }
     }
 
@@ -48,10 +53,11 @@ public class VolleyFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View  view  = inflater.inflate(R.layout.fragment_volley,container,false);
         mTextView = (TextView) view.findViewById(R.id.text);
+        mImageView = (ImageView) view.findViewById(R.id.image);
         return view;
     }
 
-    private void volleyTest()
+    private void volleyStringTest()
     {
         if(getActivity() != null)
         {
@@ -67,8 +73,8 @@ public class VolleyFragment extends Fragment{
             }
             mRequestQueue = new RequestQueue(cache,network);
             mRequestQueue.start();
-            String url = "http://www.baidu.com";
-            StringRequest stringRequest = new StringRequest(Request.Method.GET,url,new Response.Listener<String>() {
+            String stringUrl = "http://www.baidu.com";
+            StringRequest stringRequest = new StringRequest(Request.Method.GET,stringUrl,new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     if(mTextView != null)
@@ -88,7 +94,36 @@ public class VolleyFragment extends Fragment{
             stringRequest.setTag(VOLLEY_TAG);
             mRequestQueue.add(stringRequest);
 
-        }
+            ImageLoader imageLoader = new ImageLoader(mRequestQueue,new BitmapCache(getActivity()));
+            String imageUrl = "http://www.baidu.com/img/baidu_sylogo1.gif";
+            imageLoader.get(imageUrl , new ImageLoader.ImageListener() {
+                @Override
+                public void onResponse(ImageLoader.ImageContainer response, boolean isImmediate) {
+                    if(!isImmediate)
+                    {
+                        mImageView.setImageBitmap(response.getBitmap());
+                        mImageView.clearAnimation();
+                        mImageView.startAnimation(getSimpleAnimation());
+                    }
+                }
 
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    mImageView.setImageResource(R.drawable.ic_launcher);
+                }
+            });
+        }
+    }
+
+    private Animation getSimpleAnimation (long duration)
+    {
+         AlphaAnimation simpleImageAnimation = new AlphaAnimation(0,1);
+        simpleImageAnimation.setDuration(duration);
+         return simpleImageAnimation;
+    }
+
+    private Animation getSimpleAnimation ()
+    {
+        return  getSimpleAnimation(2000);
     }
 }
