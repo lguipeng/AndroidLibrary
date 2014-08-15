@@ -23,8 +23,7 @@ public class PullToRefreshFootLayout extends LinearLayout {
     private TextView mLoadingText;
     private Animation mLoadingAnimation;
     public PullToRefreshFootLayout(Context context) {
-        super(context);
-        init(null);
+       this(context,null);
     }
 
     public PullToRefreshFootLayout(Context context, AttributeSet attrs) {
@@ -40,8 +39,6 @@ public class PullToRefreshFootLayout extends LinearLayout {
         mLoadingText = (TextView)mFootLayout.findViewById(R.id.pull_to_refresh_text);
         mLoadingAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.loading_animation);
         addView(mFootLayout,new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-
-
     }
 
     public void onRefreshing(PullToRefreshListView.Mode mode)

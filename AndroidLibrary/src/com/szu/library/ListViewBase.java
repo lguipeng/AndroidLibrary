@@ -19,19 +19,11 @@ public abstract class ListViewBase extends ListView implements AbsListView.OnScr
     private boolean mIsTop;
 
     public ListViewBase(Context context) {
-        super(context);
-        init(null);
-        setupListener();
+        this(context,null);
     }
 
     public ListViewBase(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(attrs);
-        setupListener();
-    }
-
-    public ListViewBase(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
         init(attrs);
         setupListener();
     }

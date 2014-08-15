@@ -50,11 +50,6 @@ public class SwipeToDismissListView  extends ListViewBase {
         init(attrs);
     }
 
-    public SwipeToDismissListView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        init(attrs);
-    }
-
     @Override
     protected void init(AttributeSet attrs) {
         if(attrs != null)
