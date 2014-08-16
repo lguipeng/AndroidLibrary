@@ -47,6 +47,7 @@ public class MainActivity extends Activity {
         list.add("SwipeToDismissListView");
         list.add("PullToRefreshListView");
         list.add("Volley");
+        list.add("PowerImageView");
         mListItemData.setList(list);
     }
 

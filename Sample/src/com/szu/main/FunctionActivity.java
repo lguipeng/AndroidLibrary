@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import com.szu.AppTest.R;
+import com.szu.main.fragments.PivFragment;
 import com.szu.main.fragments.VolleyFragment;
 import com.szu.main.object.ListItemData;
 import com.szu.main.fragments.PtrFragment;
@@ -55,10 +56,12 @@ public class FunctionActivity extends Activity{
             case 1 :
                 init();
                 mFragment = PtrFragment.newInstance(mItemData);
-                fragmentManager.beginTransaction().add(R.id.function,mFragment).commit();
                 break;
             case 2:
                 mFragment = VolleyFragment.newInstance();
+                break;
+            case 3:
+                mFragment = PivFragment.newInstance();
                 break;
             default:
                 break;

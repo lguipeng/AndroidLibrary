@@ -67,7 +67,7 @@ public class StdFragment extends ListFragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mSwipeToDismissListView = (SwipeToDismissListView)inflater.inflate(R.layout.std_layout,container,false);
+        mSwipeToDismissListView = (SwipeToDismissListView)inflater.inflate(R.layout.fragment_std,container,false);
         return mSwipeToDismissListView;
     }
 }

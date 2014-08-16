@@ -71,7 +71,7 @@ public class PtrFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mPullToRefreshListView = (PullToRefreshListView)inflater.inflate(R.layout.ptr_layout,container,false);
+        mPullToRefreshListView = (PullToRefreshListView)inflater.inflate(R.layout.fragment_ptr,container,false);
         return mPullToRefreshListView;
     }
 
