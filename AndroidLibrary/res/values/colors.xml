@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="red">#ffff3030</color>
+    <color name="button_normal">#FF3030</color>
+    <color name="button_pressed">#FF4040</color>
     <color name="pull_to_refresh_title_text_color">#ff555555</color>
     <color name="pull_to_refresh_subtitle_text_color">#ffaaaaaa</color>
 </resources>
