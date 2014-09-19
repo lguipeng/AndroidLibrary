@@ -64,7 +64,7 @@ PowerImageView
 ```
 Sample 
 -----------------------
- Sample 是对AndroidLibrary的使用样例
+ Sample 是对AndroidLibrary的使用样例以及自己一些练习的例子。
  
 
 
