@@ -4,7 +4,7 @@ AndroidLibrary
 邮箱：<a title="欢迎邮件与我交流" href="lgpszu@gmail.com" target="_blank">lgpszu@gmail.com</a>
 SwipeToDismissListView 
 -----------------------
- SwipeToDismissListView可以让你在任何一个item向左滑动一定距离，item会出现一个删除按钮，通过setOnDismissListener，可以对按钮的点击事件进行监听，在OnDismiss完成你想做的事情。按钮的出现和消失已经设置有动画效果. Use like this:
+ SwipeToDismissListView可以让你在任何一个item向左滑动一定距离，item会出现一个删除按钮，通过setOnDismissListener，可以对按钮的点击事件进行监听，在OnDismiss完成你想做的事情。按钮的出现和消失已经设置有动画效果. use like this:
 ```java
 <com.szu.library.swipetodismiss.SwipeToDismissListView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -27,7 +27,7 @@ SwipeToDismissListView
 
 PullToRefreshListView
 -----------------------
- PullToRefreshListView 下拉刷新的列表，支持底部加载，默认是点击加载更多，也可以再布局文件添加属性ptrMode:"auto"设置为自动加载，或者在代码里面setMode()也可以。 Use like this:
+ PullToRefreshListView 下拉刷新的列表，支持底部加载，默认是点击加载更多，也可以再布局文件添加属性ptrMode:"auto"设置为自动加载，或者在代码里面setMode()也可以。 use like this:
 ```java
 <com.szu.library.pulltorefresh.PullToRefreshListView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -49,7 +49,7 @@ PullToRefreshListView
 
 PowerImageView
 -------------
-可以显示静态的图片或者是播放gif动态图，Use like this:
+可以显示静态的图片或者是播放gif动态图，use like this:
 
 ```java
  <com.szu.library.imageview.PowerImageView
@@ -64,13 +64,7 @@ PowerImageView
 ```
 Sample 
 -----------------------
- Sample 是对AndroidLibrary的使用样例
+ Sample 是对AndroidLibrary的使用样例以及自己一些练习的例子。
  
-效果图 
------------------------
-![image1](http://img2.ph.126.net/b6ugBRfr15o-NbU3vxbjFw==/4939604366395716947.png)
-![image2](http://img2.ph.126.net/PYNBrvGvAghhATvVzfP5cg==/6608627832887595536.png)
-![image3](http://img1.ph.126.net/NvRGlH46_Sugvku4ztvrrQ==/6619327180537122598.png)
-![image4](http://img2.ph.126.net/es47Ehm8i5r9BiVBIau5yA==/6619581167723139245.png)
 
 
