@@ -13,11 +13,11 @@ import java.util.List;
 /**
  * Created by lgp on 2014/7/24.
  */
-public class ListAdapter extends BaseAdapter {
+public class SimpleListAdapter extends BaseAdapter {
     private List<String> lists;
     private Context mContext;
 
-    public ListAdapter(Context mContext, List<String> lists) {
+    public SimpleListAdapter(Context mContext, List<String> lists) {
         this.mContext = mContext;
         this.lists = lists;
     }
@@ -42,7 +42,7 @@ public class ListAdapter extends BaseAdapter {
         Holder holder;
         if(view==null)
         {
-            view = LayoutInflater.from(mContext).inflate(R.layout.listview_item,null);
+            view = LayoutInflater.from(mContext).inflate(R.layout.simple_listview_item,null);
             holder =new Holder();
             holder.textView =(TextView)view.findViewById(R.id.textView);
             view.setTag(holder);

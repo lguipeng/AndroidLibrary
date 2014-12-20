@@ -1,4 +1,4 @@
-package com.szu.main.object;
+package com.szu.main.objects;
 
 import java.io.Serializable;
 import java.util.List;

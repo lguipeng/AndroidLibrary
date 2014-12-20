@@ -42,12 +42,13 @@ public class PullToRefreshListView extends ListViewBase {
     @Override
     protected void init(AttributeSet attrs) {
 
-        if(attrs != null)
+        if (attrs != null)
         {
             TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.PullToRefreshListView);
             int m = array.getInt(R.styleable.PullToRefreshListView_ptrMode,0);
             setMode(Mode.mapIntToValue(m));
-            if(DEBUG)
+            array.recycle();
+            if (DEBUG)
             {
                 Logger.getInstance().debug(TAG,"MODE = "+mode);
             }
@@ -311,6 +312,14 @@ public class PullToRefreshListView extends ListViewBase {
         this.mode = mode;
     }
 
+    public void updateFootView()
+    {
+        if(mFootLayout != null)
+        {
+            mFootLayout.initView(getMode());
+            invalidate();
+        }
+    }
     public static interface  OnRefreshListener{
 
         void OnRefresh(Orientation orientation);

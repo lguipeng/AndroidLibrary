@@ -1,6 +1,5 @@
 package com.szu.main.fragments;
 
-import android.app.ListFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,18 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
-import com.szu.library.utils.Logger;
+
 import com.szu.main.FunctionActivity;
-import com.szu.main.adapter.ListAdapter;
-import com.szu.main.object.ListItemData;
+import com.szu.main.adapter.SimpleListAdapter;
+import com.szu.main.objects.ListItemData;
 
 /**
  * Created by lgp on 2014/7/29.
  */
-public class MainMenuFragment  extends ListFragment{
-    private final String TAG = "MainMenuFragment";
+public class MainMenuFragment  extends BaseListFragment{
     private ListItemData mItemData;
-    private ListAdapter mAdapter;
+    private SimpleListAdapter mAdapter;
 
     public static MainMenuFragment newInstance(ListItemData data)
     {
@@ -32,11 +30,12 @@ public class MainMenuFragment  extends ListFragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
         mItemData = (ListItemData) getArguments().getSerializable("list");
         if(mItemData != null)
         {
-            mAdapter = new ListAdapter(getActivity(),mItemData.getList());
-            Logger.getInstance().debug(TAG,"new adapter");
+            mAdapter = new SimpleListAdapter(getActivity(),mItemData.getList());
+//            Logger.getInstance().debug(TAG,"new adapter");
         }
 
     }
@@ -46,7 +45,7 @@ public class MainMenuFragment  extends ListFragment{
         if(mAdapter != null)
         {
             setListAdapter(mAdapter);
-            Logger.getInstance().debug(TAG,"setListAdapter");
+//            Logger.getInstance().debug(TAG,"setListAdapter");
         }
     }
 

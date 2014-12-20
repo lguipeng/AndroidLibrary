@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AppTest</string>
-    <string name="delete_activity">Delete Activity</string>
+    <string name="app_name">AppDemo</string>
+    <string name="swipe_dismiss_listView">SwipeToDismissListView</string>
+    <string name="pull_refresh_listView">PullToRefreshListView</string>
+    <string name="volley">Volley</string>
+    <string name="power_imageView">PowerImageView</string>
+    <string name="drawer_layout">DrawerLayout</string>
+    <string name="contacts_list">ContactsListView</string>
+
+    <string name="hot">Hot</string>
+    <string name="latest">Latest</string>
+    <string name="about">About</string>
+
     <string name="delete">删除</string>
+    <string name="action_setting">Setting</string>
+
+    <string name="ptr_normal">NORMAL</string>
+    <string name="ptr_auto_refresh_in_end">AUTO_REFRESH_IN_END</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
 </resources>

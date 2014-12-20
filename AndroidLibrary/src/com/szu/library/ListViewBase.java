@@ -36,25 +36,25 @@ public abstract class ListViewBase extends ListView implements AbsListView.OnScr
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 
-        if(false)
+        if (false)
         {
             Logger.getInstance().debug(TAG,"First Visible: " + firstVisibleItem + ". Visible Count: " + visibleItemCount
                     + ". Total Items:" + totalItemCount);
         }
-        if(false)
+        if (false)
         {
             Logger.getInstance().debug(TAG,". Visible Count: " + getLastVisiblePosition()
                     + ". Total Items:" + totalItemCount);
         }
 
-        if(firstVisibleItem == 0 || totalItemCount == 0)
+        if (firstVisibleItem == 0 || totalItemCount == 0)
         {
             mIsTop = true;
         }else
         {
             mIsTop = false;
         }
-        if((getLastVisiblePosition() == (totalItemCount -1) ) && firstVisibleItem != 0)
+        if ((getLastVisiblePosition() == (totalItemCount -1) ) && firstVisibleItem != 0)
         {
                 mIsBottom = true;
         }else
@@ -75,7 +75,6 @@ public abstract class ListViewBase extends ListView implements AbsListView.OnScr
     private void setupListener()
     {
         setOnScrollListener(this);
-        Logger.getInstance().debug(TAG,"on init");
     }
     protected abstract void init(AttributeSet attrs);
     protected abstract  void onDown(MotionEvent e);

@@ -9,6 +9,7 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="@string/delete"
+            android:textColor="@android:color/white"
             android:background="@drawable/dismiss_button_bg"
             android:id="@+id/button" android:layout_gravity="left"/>
 </LinearLayout>

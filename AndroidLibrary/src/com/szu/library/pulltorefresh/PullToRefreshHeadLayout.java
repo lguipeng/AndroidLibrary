@@ -83,7 +83,7 @@ public class PullToRefreshHeadLayout extends LinearLayout{
         mDate = TimeUtils.getTime();
         mSubTitle.setVisibility(VISIBLE);
         mSubTitle.setText("更新于: "+mDate);
-        if(isShowReverseAnimation)
+        if (isShowReverseAnimation)
         {
             mPullToRefreshView.clearAnimation();
             mPullToRefreshView.startAnimation(mReverseAnimation);

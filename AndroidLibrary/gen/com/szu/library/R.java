@@ -53,38 +53,40 @@ containing a value of this type.
         public static int repeat_play=0x7f010004;
     }
     public static final class color {
-        public static int pull_to_refresh_subtitle_text_color=0x7f060002;
-        public static int pull_to_refresh_title_text_color=0x7f060001;
-        public static int red=0x7f060000;
+        public static int button_normal=0x7f050000;
+        public static int button_pressed=0x7f050001;
+        public static int pull_to_refresh_subtitle_text_color=0x7f050003;
+        public static int pull_to_refresh_title_text_color=0x7f050002;
     }
     public static final class dimen {
-        public static int header_footer_left_right_padding=0x7f070003;
-        public static int header_footer_top_bottom_padding=0x7f070004;
-        public static int indicator_corner_radius=0x7f070001;
-        public static int indicator_internal_padding=0x7f070002;
-        public static int indicator_right_padding=0x7f070000;
-        public static int pull_to_refresh_subtitle_text_size=0x7f070006;
-        public static int pull_to_refresh_title_text_size=0x7f070005;
+        public static int header_footer_left_right_padding=0x7f060003;
+        public static int header_footer_top_bottom_padding=0x7f060004;
+        public static int indicator_corner_radius=0x7f060001;
+        public static int indicator_internal_padding=0x7f060002;
+        public static int indicator_right_padding=0x7f060000;
+        public static int pull_to_refresh_subtitle_text_size=0x7f060006;
+        public static int pull_to_refresh_title_text_size=0x7f060005;
     }
     public static final class drawable {
-        public static int dismiss_button_background=0x7f020000;
+        public static int dismiss_button_bg=0x7f020000;
         public static int ic_launcher=0x7f020001;
         public static int img_play_normal=0x7f020002;
         public static int loading=0x7f020003;
         public static int loading_circle=0x7f020004;
         public static int pull_refresh_arrow_down=0x7f020005;
         public static int pull_refresh_arrow_up=0x7f020006;
+        public static int wave=0x7f020007;
     }
     public static final class id {
-        public static int auto=0x7f050001;
-        public static int button=0x7f050008;
-        public static int click_to_refresh=0x7f050002;
-        public static int fl_inner=0x7f050005;
-        public static int normal=0x7f050000;
-        public static int pull_to_refresh_arrow=0x7f050006;
-        public static int pull_to_refresh_loading=0x7f050003;
-        public static int pull_to_refresh_sub_text=0x7f050007;
-        public static int pull_to_refresh_text=0x7f050004;
+        public static int auto=0x7f080000;
+        public static int button=0x7f080008;
+        public static int click_to_refresh=0x7f080002;
+        public static int fl_inner=0x7f080005;
+        public static int normal=0x7f080001;
+        public static int pull_to_refresh_arrow=0x7f080006;
+        public static int pull_to_refresh_loading=0x7f080003;
+        public static int pull_to_refresh_sub_text=0x7f080007;
+        public static int pull_to_refresh_text=0x7f080004;
     }
     public static final class layout {
         public static int pull_to_refresh_footer=0x7f030000;
@@ -92,13 +94,13 @@ containing a value of this type.
         public static int swipe2dismiss_layout=0x7f030002;
     }
     public static final class string {
-        public static int app_name=0x7f080000;
-        public static int click_to_refresh=0x7f080005;
-        public static int click_to_refresh_get_more=0x7f080006;
-        public static int delete=0x7f080001;
-        public static int pull_to_refresh=0x7f080002;
-        public static int refreshing=0x7f080004;
-        public static int release_to_refresh=0x7f080003;
+        public static int app_name=0x7f070000;
+        public static int click_to_refresh=0x7f070005;
+        public static int click_to_refresh_get_more=0x7f070006;
+        public static int delete=0x7f070001;
+        public static int pull_to_refresh=0x7f070002;
+        public static int refreshing=0x7f070004;
+        public static int release_to_refresh=0x7f070003;
     }
     public static final class styleable {
         /** Attributes that can be used with a PowerImageView.
@@ -129,7 +131,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.szu.library:auto_play
         */
-        public static final int PowerImageView_auto_play = 0;
+        public static int PowerImageView_auto_play = 0;
         /**
           <p>This symbol is the offset where the {@link com.szu.library.R.attr#repeat_play}
           attribute's value can be found in the {@link #PowerImageView} array.
@@ -143,7 +145,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.szu.library:repeat_play
         */
-        public static final int PowerImageView_repeat_play = 1;
+        public static int PowerImageView_repeat_play = 1;
         /** Attributes that can be used with a PullToRefreshListView.
            <p>Includes the following attributes:</p>
            <table>
@@ -173,7 +175,7 @@ containing a value of this type.
 </table>
           @attr name com.szu.library:ptrMode
         */
-        public static final int PullToRefreshListView_ptrMode = 0;
+        public static int PullToRefreshListView_ptrMode = 0;
         /** Attributes that can be used with a SwipeToDismissListView.
            <p>Includes the following attributes:</p>
            <table>
@@ -199,7 +201,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be an integer value, such as "<code>100</code>".
           @attr name com.szu.library:dismissHeight
         */
-        public static final int SwipeToDismissListView_dismissHeight = 0;
+        public static int SwipeToDismissListView_dismissHeight = 0;
         /**
           <p>This symbol is the offset where the {@link com.szu.library.R.attr#dismissWith}
           attribute's value can be found in the {@link #SwipeToDismissListView} array.
@@ -210,6 +212,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be an integer value, such as "<code>100</code>".
           @attr name com.szu.library:dismissWith
         */
-        public static final int SwipeToDismissListView_dismissWith = 1;
+        public static int SwipeToDismissListView_dismissWith = 1;
     };
 }

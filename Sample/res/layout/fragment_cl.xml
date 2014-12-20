@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@android:id/list"
+    android:background="@android:color/white"
+    android:dividerHeight="2dp"
+    android:divider="@color/grey"
+    android:scrollbarStyle="outsideOverlay"
+    android:scrollbarThumbVertical="@color/blue"
+    android:scrollbarSize="3dp">
+
+</ListView>

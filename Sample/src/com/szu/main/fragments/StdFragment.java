@@ -1,6 +1,5 @@
 package com.szu.main.fragments;
 
-import android.app.ListFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,17 +8,17 @@ import android.widget.ListView;
 import android.widget.Toast;
 import com.szu.AppTest.R;
 import com.szu.library.swipetodismiss.SwipeToDismissListView;
-import com.szu.library.utils.Logger;
-import com.szu.main.adapter.ListAdapter;
-import com.szu.main.object.ListItemData;
+import com.szu.main.adapter.SimpleListAdapter;
+import com.szu.main.objects.ListItemData;
 
 /**
  * Created by lgp on 2014/7/29.
  */
-public class StdFragment extends ListFragment{
-    private final String TAG = "StdFragment";
+public class StdFragment extends BaseListFragment{
     private ListItemData mItemData;
-    private ListAdapter mAdapter;
+    private SimpleListAdapter mAdapter;
+
+
     private SwipeToDismissListView mSwipeToDismissListView;
 
     public static StdFragment newInstance(ListItemData data)
@@ -33,11 +32,12 @@ public class StdFragment extends ListFragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.swipe_dismiss_listView);
         mItemData = (ListItemData) getArguments().getSerializable("list");
         if(mItemData != null)
         {
-            mAdapter = new ListAdapter(getActivity(),mItemData.getList());
-            Logger.getInstance().debug(TAG,"new adapter");
+            mAdapter = new SimpleListAdapter(getActivity(),mItemData.getList());
+//            Logger.getInstance().debug(TAG,"new adapter");
         }
     }
 
@@ -53,7 +53,7 @@ public class StdFragment extends ListFragment{
         if(mAdapter != null)
         {
             setListAdapter(mAdapter);
-            Logger.getInstance().debug(TAG,"setListAdapter");
+//            Logger.getInstance().debug(TAG,"setListAdapter");
         }
         mSwipeToDismissListView.setOnDismissListener(new SwipeToDismissListView.OnDismissListener() {
             @Override

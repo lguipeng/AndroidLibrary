@@ -19,7 +19,7 @@ import com.szu.main.cache.BitmapCache;
 /**
  * Created by lgp on 2014/8/3.
  */
-public class VolleyFragment extends Fragment{
+public class VolleyFragment extends BaseFragment{
     private TextView mTextView;
     private ImageView mImageView;
     private final String VOLLEY_TAG = "VOLLEY_STRING_TAG";
@@ -32,6 +32,7 @@ public class VolleyFragment extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.volley);
     }
 
     @Override
@@ -109,7 +110,7 @@ public class VolleyFragment extends Fragment{
 
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    mImageView.setImageResource(R.drawable.ic_launcher);
+                    mImageView.setImageResource(R.drawable.logo);
                 }
             });
         }

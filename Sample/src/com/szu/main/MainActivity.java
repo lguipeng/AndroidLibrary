@@ -1,11 +1,10 @@
 package com.szu.main;
 
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import com.szu.AppTest.R;
 import com.szu.library.utils.Logger;
-import com.szu.main.object.ListItemData;
+import com.szu.main.objects.ListItemData;
 import com.szu.main.fragments.MainMenuFragment;
 
 import java.util.ArrayList;
@@ -14,7 +13,7 @@ import java.util.List;
 /**
  * Created by lgp on 2014/7/22.
  */
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
 
     private final String TAG = "MainActivity";
     private MainMenuFragment mainMenuFragment = null;
@@ -44,10 +43,12 @@ public class MainActivity extends Activity {
     {
         mListItemData = new ListItemData();
         List<String> list = new ArrayList<String>();
-        list.add("SwipeToDismissListView");
-        list.add("PullToRefreshListView");
-        list.add("Volley");
-        list.add("PowerImageView");
+        list.add(getResources().getString(R.string.swipe_dismiss_listView));
+        list.add(getResources().getString(R.string.pull_refresh_listView));
+        list.add(getResources().getString(R.string.volley));
+        list.add(getResources().getString(R.string.power_imageView));
+        list.add(getResources().getString(R.string.drawer_layout));
+        list.add(getResources().getString(R.string.contacts_list));
         mListItemData.setList(list);
     }
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_setting"
+        android:icon="@drawable/action_setting"
+        android:title="@string/action_setting"
+        android:showAsAction="ifRoom">
+        <menu>
+            <item android:id="@+id/ptr_normal"
+                android:title="@string/ptr_normal" />
+            <item android:id="@+id/ptr_auto_refresh_in_end"
+                android:title="@string/ptr_auto_refresh_in_end" />
+        </menu>
+    </item>
+</menu>

@@ -11,13 +11,19 @@ import com.szu.AppTest.R;
 /**
  * Created by lgp on 2014/8/16.
  */
-public class PivFragment extends Fragment{
+public class PivFragment extends BaseFragment{
     public static PivFragment  newInstance()
     {
         PivFragment pivFragment = new PivFragment();
         return pivFragment;
     }
-    
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setTitle(R.string.power_imageView);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_piv,container,false);

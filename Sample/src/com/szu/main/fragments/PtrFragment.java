@@ -1,26 +1,27 @@
 package com.szu.main.fragments;
 
-import android.app.ListFragment;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.Toast;
+
 import com.szu.AppTest.R;
 import com.szu.library.pulltorefresh.PullToRefreshListView;
-import com.szu.library.utils.Logger;
-import com.szu.main.adapter.ListAdapter;
-import com.szu.main.object.ListItemData;
+import com.szu.library.utils.ToastUtils;
+import com.szu.main.adapter.SimpleListAdapter;
+import com.szu.main.objects.ListItemData;
 
 /**
  * Created by lgp on 2014/7/29.
  */
-public class PtrFragment extends ListFragment {
-    private final String TAG = "PtrFragment";
+public class PtrFragment extends BaseListFragment {
     private ListItemData mItemData;
-    private ListAdapter mAdapter;
+    private SimpleListAdapter mAdapter;
     private PullToRefreshListView mPullToRefreshListView;
 
     public static PtrFragment newInstance(ListItemData data)
@@ -34,18 +35,19 @@ public class PtrFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.pull_refresh_listView);
         mItemData = (ListItemData) getArguments().getSerializable("list");
         if(mItemData != null)
         {
-            mAdapter = new ListAdapter(getActivity(),mItemData.getList());
-            Logger.getInstance().debug(TAG,"new adapter");
+            mAdapter = new SimpleListAdapter(getActivity(),mItemData.getList());
+//            Logger.getInstance().debug(TAG,"new adapter");
         }
     }
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Toast.makeText(getActivity(), mItemData.getList().get(position), Toast.LENGTH_SHORT).show();
+        ToastUtils.show(getActivity(),mItemData.getList().get(position-1));
     }
 
     @Override
@@ -54,7 +56,6 @@ public class PtrFragment extends ListFragment {
         if(mAdapter != null)
         {
             setListAdapter(mAdapter);
-            Logger.getInstance().debug(TAG,"setListAdapter");
         }
         mPullToRefreshListView.setOnRefreshListener(new PullToRefreshListView.OnRefreshListener() {
             @Override
@@ -87,7 +88,6 @@ public class PtrFragment extends ListFragment {
             {
                 e.printStackTrace();
             }
-
             return "item"+(mItemData.getList().size());
         }
 
@@ -100,10 +100,30 @@ public class PtrFragment extends ListFragment {
             {
                 mItemData.getList().add(s);
             }
-
             mPullToRefreshListView.setOnRefreshDone();
             mAdapter.notifyDataSetChanged();
+        }
+    }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_ptr_actions,menu);
+//        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.ptr_normal:
+                mPullToRefreshListView.setMode(PullToRefreshListView.Mode.NORMAL);
+                mPullToRefreshListView.updateFootView();
+                return true;
+            case R.id.ptr_auto_refresh_in_end:
+                mPullToRefreshListView.setMode(PullToRefreshListView.Mode.AUTO_REFRESH_IN_END);
+                mPullToRefreshListView.updateFootView();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

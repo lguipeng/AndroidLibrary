@@ -12,6 +12,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AbsListView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import com.szu.library.ListViewBase;
 import com.szu.library.R;
@@ -41,8 +42,7 @@ public class SwipeToDismissListView  extends ListViewBase {
     private Animation mShowAnimation;
     private Animation mDisappearAnimation;
     public SwipeToDismissListView(Context context) {
-        super(context);
-        init(null);
+       this(context,null);
     }
 
     public SwipeToDismissListView(Context context, AttributeSet attrs) {
@@ -114,7 +114,7 @@ public class SwipeToDismissListView  extends ListViewBase {
                 public void onAnimationEnd(Animation animation) {
                     mState = State.DISAPPEAR;
                     mItemLayout.removeView(mDismissView);
-                    mDismissView =null;
+                    mDismissView = null;
                     mDismissButton.clearAnimation();
                     if(DEBUG)
                         Logger.getInstance().debug(TAG,"onAnimationEnd");
@@ -136,11 +136,11 @@ public class SwipeToDismissListView  extends ListViewBase {
     @Override
     protected void onMove(MotionEvent e) {
 
-        if(DEBUG)
+        if (DEBUG)
         {
             Logger.getInstance().debug(TAG,"X-->"+e.getX()+"  Y-->"+e.getY());
         }
-        if(mStartX - e.getX() >= mDismissWith && Math.abs(e.getY() - mStartY) <= mDismissHeight
+        if (mStartX - e.getX() >= mDismissWith && Math.abs(e.getY() - mStartY) <= mDismissHeight
                 && mState != State.DISAPPEARING)
         {
            mState = State.CAN_SHOW;
@@ -156,7 +156,7 @@ public class SwipeToDismissListView  extends ListViewBase {
             {
                 mOnDismissViewListener.onPreShow();
             }
-            if(mDismissView == null)
+            if (mDismissView == null)
             {
                 mDismissView = LayoutInflater.from(getContext()).inflate(R.layout.swipe2dismiss_layout,null);
                 mShowAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.dismiss_view_animation);
@@ -177,12 +177,15 @@ public class SwipeToDismissListView  extends ListViewBase {
                     }
                 });
             }
-            mItemLayout =(ViewGroup) getChildAt(mSelectItem - getFirstVisiblePosition());
+            if (isViewGroup(getChildAt(mSelectItem - getFirstVisiblePosition())))
+            {
+                mItemLayout =(ViewGroup) getChildAt(mSelectItem - getFirstVisiblePosition());
+            }
             RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                     LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
             params.addRule(RelativeLayout.CENTER_VERTICAL);
-            if(mItemLayout != null)
+            if (mItemLayout != null)
             {
                 mItemLayout.addView(mDismissView,params);
                 mState = State.SHOWING;
@@ -192,13 +195,18 @@ public class SwipeToDismissListView  extends ListViewBase {
                 }
             }else
             {
-                if(DEBUG)
+                if (DEBUG)
                 {
-                    Logger.getInstance().debug(TAG,"The Item Layout (View Group) is Null");
+                    Logger.getInstance().error(TAG,"The Item Layout (View Group) is Null");
                 }
             }
 
         }
+    }
+
+    private boolean isViewGroup(View view)
+    {
+        return (view instanceof ViewGroup)? true: false;
     }
 
     public boolean isEnable() {
